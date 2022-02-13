@@ -33,7 +33,7 @@ class DecoderRNN(nn.Module):
 
         # the LSTM takes embedded word vectors (of a specified size) as inputs 
         # and outputs hidden states of size hidden_dim
-        self.lstm = nn.LSTM(embed_size, hidden_size, num_layers=num_layers)
+        self.lstm = nn.LSTM(embed_size, hidden_size, num_layers, batch_first = True)
 
         # the linear layer that maps the hidden state output dimension 
         
