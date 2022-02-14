@@ -63,6 +63,10 @@ class DecoderRNN(nn.Module):
             
             output.append(pred.item()) 
 
+            #Finish if <end> is found
+            if pred.item() == 1:
+                break
+
             inputs = self.word_embeddings(pred) 
             
         return output
